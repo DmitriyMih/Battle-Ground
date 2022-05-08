@@ -48,6 +48,7 @@ public class GridController : MonoBehaviour
                 Vector3 currentPosition = gridPoint.position + new Vector3(x, 0, y) * scale;
                 
                 GameObject groundItem = Instantiate(groundPrefab.gameObject, currentPosition, Quaternion.identity);
+                groundItem.transform.localScale = Vector3.one * scale;
                 groundItem.transform.parent = groundGroup;
 
                 GroundItem item = groundItem.GetComponent<GroundItem>();
