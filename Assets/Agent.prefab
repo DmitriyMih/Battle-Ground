@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8908707449264904221}
   - component: {fileID: 8908707449264904418}
   - component: {fileID: 8908707449264904222}
+  - component: {fileID: 3817094895039774291}
   - component: {fileID: 8908707449264904217}
   m_Layer: 0
   m_Name: Agent
@@ -115,6 +116,39 @@ MonoBehaviour:
   debugRadius: 1
   lineRenderer: {fileID: 0}
   agent: {fileID: 8908707449264904217}
+--- !u!114 &3817094895039774291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8908707449264904419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ea71fe8ce47534b8ff72ba67bf53ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  predab: {fileID: 578861551997061520, guid: dea9bd03020be1c47ab2a01bf56f7f8b, type: 3}
+  currentSquadType: 0
+  middlePoint: {fileID: 0}
+  solidersPositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  snipersPositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  inIspector: 1
+  viewObjects: []
 --- !u!195 &8908707449264904217
 NavMeshAgent:
   m_ObjectHideFlags: 0
