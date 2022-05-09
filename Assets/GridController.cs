@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GridController : MonoBehaviour
 {
+    
     public Vector2Int gridSizeX;
     public Vector2Int gridSizeY;
 
@@ -52,12 +53,12 @@ public class GridController : MonoBehaviour
                 groundItem.transform.parent = groundGroup;
 
                 GroundItem item = groundItem.GetComponent<GroundItem>();
-                if(Random.Range(0, 9) == 4)
-                {
-                    item.currentType = (GroundItem.GroundType)Random.Range(0, 3);
-                    item.Initialization();
-                    Debug.Log("Type " + item.currentType);
-                }
+                //if(Random.Range(0, 9) == 4)
+                //{
+                //    item.currentType = (GroundItem.GroundType)Random.Range(0, 3);
+                //    item.Initialization();
+                //    Debug.Log("Type " + item.currentType);
+                //}
 
                 ground.Add(groundItem);
             }

@@ -7,6 +7,7 @@ public class DragObjects : MonoBehaviour
 {
     [Header("Main Settings")]
     [SerializeField] private Camera mainCamera;
+    public float scale = 1.5f;
 
     public bool isActive = false;
 
@@ -28,6 +29,11 @@ public class DragObjects : MonoBehaviour
     {
         mainCamera = Camera.main;
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    public void Start()
+    {
+        scale = GlobalGridController.globalGridController.scale;
     }
 
     public void Update()
@@ -81,6 +87,16 @@ public class DragObjects : MonoBehaviour
         if (groundPlane.Raycast(ray, out float position))
         {
             Vector3 newPosition = ray.GetPoint(position);
+
+            float x = Mathf.RoundToInt(newPosition.x / scale) * scale - (scale / 2);
+            float z = Mathf.RoundToInt(newPosition.z / scale) * scale - (scale / 2);
+           
+            x = Mathf.Clamp(x, GlobalGridController.globalGridController.gridSizeX.x * scale, GlobalGridController.globalGridController.gridSizeX.y * scale);
+            z = Mathf.Clamp(z, GlobalGridController.globalGridController.gridSizeY.x * scale, GlobalGridController.globalGridController.gridSizeY.y * scale);
+
+            Debug.Log("Clamp position = " + x + " | " + z);
+            newPosition = new Vector3(x, 0, z);
+
             if (newPosition.x == transform.position.x && newPosition.z == transform.position.z)
             {
                 isActive = true;
